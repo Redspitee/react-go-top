@@ -1,0 +1,45 @@
+.Gotop {
+  width: 45px;
+  height: 45px;
+  color: white;
+  background: #cccccc;
+  border-radius: 5px;
+  position: fixed;
+  cursor: pointer;
+  text-align: center;
+  line-height: 45px;
+  transition: all .3s;
+  z-index: 1000;
+  opacity: 0;
+  display: none;
+  right: 10%;
+  bottom: 10%;
+}
+
+.Gotop:active {
+  opacity: 1;
+  background: #666;
+}
+
+.Gotop.active {
+  display: block;
+  animation: fadeTo .7s forwards;
+}
+
+
+@keyframes fadeTo {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.6;
+
+  }
+}
+
+@media screen and(max-width:1024px) {
+  .Gotop {
+    right: 1em;
+  }
+}
