@@ -26,16 +26,13 @@ class Gotop extends PureComponent{
     this.setState({show})
   }
   goTop(){
-      let time = 0;
-      const fasetSpeed = (docuEle.scrollTop-100)/100 > 10 ? (docuEle.scrollTop -100)/100 : 10;
-      
+      const origin_distance = docuEle.scrollTop;
+      const Time = 80;
+      const v = origin_distance/Time;
       let t = setInterval(()=>{
         const distance = docuEle.scrollTop;
-        if(time < 50) docuEle.scrollTop = distance - 1;
-        else if(docuEle.scrollTop < 50) docuEle.scrollTop = distance - 1;
-        else docuEle.scrollTop = distance - fasetSpeed;
-        docuEle.scrollTop <= 0 ? clearInterval(t) : null;
-        time++;
+        docuEle.scrollTop = distance - v;
+        if(docuEle.scrollTop <= 0) { clearInterval(t)} 
       },1);
 
       // firfox,ie
