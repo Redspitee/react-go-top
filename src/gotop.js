@@ -1,5 +1,7 @@
 import React,{ PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import './gotop.css';
+import img from './gotop.png';
 
 const docuEle = document.documentElement;
 
@@ -8,19 +10,21 @@ class Gotop extends PureComponent{
     super(props)
     this.state={
       show: false,
+      visibilityHeight: props.visibilityHeight ? props.visibilityHeight : 400,
+      target:  props.target ? props.target() : window
     }
     this.handleScroll = this.handleScroll.bind(this);
     this.goTop = this.goTop.bind(this);
   }
   componentDidMount(){
-    window.addEventListener('scroll', this.handleScroll);
+    this.state.target.addEventListener('scroll', this.handleScroll);
   }
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    this.state.target.removeEventListener('scroll', this.handleScroll);
   }
   handleScroll(){
     let scrolltop = docuEle.scrollTop;
-    let minHei = docuEle.clientHeight / 2;
+    const minHei = this.state.visibilityHeight;
     let show = false;
     scrolltop > minHei ? show = true : show = false;
     this.setState({show})
@@ -42,14 +46,28 @@ class Gotop extends PureComponent{
         clearInterval(t)
       }
 
+      this.props.onClick ?  this.props.onClick() : null;
   }
   render(){
     const { show } = this.state;
+    const { style, imgSrc } = this.props;
+    const imgpic = imgSrc ? imgSrc : img;
+    const styles = style ? style: {};
+
+
     return(
-      <div className={`Gotop ${show?"active":""}`} onClick={this.goTop} >
-        &#9650;
+      <div style={styles} className={`Gotop ${show?"active":""}`} onClick={this.goTop}>
+        <div className="go-top-inner">
+            <img src={imgpic} alt="go-to-top"/>
+        </div>
       </div>
     )
   }
+}
+Gotop.propTypes = {
+  style: PropTypes.object,
+  imgSrc: PropTypes.string,
+  visibilityHeight: PropTypes.number,
+  onClick: PropTypes.func
 }
 export default Gotop;
