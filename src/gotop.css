@@ -1,29 +1,38 @@
 .Gotop {
+  right:10%;
+  bottom:10%;
   width: 45px;
   height: 45px;
-  color: white;
-  background: #cccccc;
+  line-height: 45px;
+  background: #999;
   border-radius: 5px;
   position: fixed;
   cursor: pointer;
   text-align: center;
-  line-height: 45px;
   transition: all .3s;
   z-index: 1000;
   opacity: 0;
   display: none;
-  right: 10%;
-  bottom: 10%;
 }
 
 .Gotop:active {
-  opacity: 1;
-  background: #666;
+  background-color: #333;
 }
-
+.Gotop .go-top-inner{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 .Gotop.active {
   display: block;
   animation: fadeTo .7s forwards;
+}
+.Gotop img{
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
 }
 
 
@@ -33,8 +42,7 @@
   }
 
   to {
-    opacity: 0.6;
-
+    opacity: 1;
   }
 }
 
