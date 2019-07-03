@@ -1,6 +1,6 @@
 ## Install
 
-```
+```jsx
 npm i react-go-top
 or
 yarn add react-go-top
@@ -8,7 +8,7 @@ yarn add react-go-top
 
 ## Usage
 
-```
+```jsx
 import Gotop from 'react-go-top';
 <Gotop 
   style={{width:"55px", height:"55px"}}
@@ -20,7 +20,7 @@ import Gotop from 'react-go-top';
 
 ## API
 
-```
+```jsx
 imgSrc              string       ""                 组件里箭头的图片链接
 style               object       null               CSS样式
 target              func         ()=>window         监听滚动事件的父节点
