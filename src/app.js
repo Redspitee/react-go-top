@@ -13,7 +13,7 @@ class App extends Component{
 
   render(){
     let list = [];
-    for(let i=0;i<200;i++){
+    for(let i = 0 ; i < 200; i++ ){
       list.push(i)
     }
     return(
@@ -21,7 +21,7 @@ class App extends Component{
         {
           list.map(v => <div key={v}>这是第{v+1}行</div> )
         }
-       <Gotop style={{width:"55px"}}  visibilityHeight={500} target={()=>document.getElementById('app')} />
+       <Gotop  visibilityHeight={500} target={()=>document.getElementById('app')} />
       </div>
     )
   }

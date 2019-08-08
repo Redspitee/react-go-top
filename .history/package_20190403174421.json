@@ -1,6 +1,6 @@
 {
   "name": "react-go-top",
-  "version": "1.1.0",
+  "version": "1.0.6",
   "description": "a tiny animate go top component",
   "main": "dist/bundle.js",
   "files": [

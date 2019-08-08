@@ -4,8 +4,7 @@
   width: 45px;
   height: 45px;
   line-height: 45px;
-  background: #999;
-  border-radius: 5px;
+  border-radius: 50%;
   position: fixed;
   cursor: pointer;
   text-align: center;
@@ -13,6 +12,9 @@
   z-index: 1000;
   opacity: 0;
   display: none;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+  color: #787978;
 }
 
 .Gotop:active {
@@ -27,7 +29,7 @@
   display: block;
   animation: fadeTo .7s forwards;
 }
-.Gotop img{
+.Gotop img, .Gotop svg{
   width: 50%;
   position: absolute;
   top: 50%;

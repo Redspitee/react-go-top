@@ -51,13 +51,12 @@ class Gotop extends PureComponent{
   render(){
     const { show } = this.state;
     const { style, imgSrc } = this.props;
-    const imgpic = imgSrc ? imgSrc : img;
     const styles = style ? style: {};
 
     return(
       <div style={styles} className={`Gotop ${show?"active":""}`} onClick={this.goTop}>
         <div className="go-top-inner">
-            <img src={imgpic} alt="go-to-top"/>
+            { imgSrc ? <img src={imgSrc} alt="go-to-top"/> : <svg t="1565238236954" fill="currentColor" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3644" width="200" height="200"><path d="M483.875 230.75a28.125 28.125 0 0 1 56.25 0v590.625a28.125 28.125 0 0 1-56.25 0z" p-id="3645"></path><path d="M512 242.28125l-205.03125 205.3125a28.125 28.125 0 1 1-39.9375-39.9375l225-225a28.125 28.125 0 0 1 39.9375 0l225 225a28.125 28.125 0 0 1-39.9375 39.9375z" p-id="3646"></path></svg>}
         </div>
       </div>
     )
